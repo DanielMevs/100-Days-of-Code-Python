@@ -1,4 +1,6 @@
 def format_name(f_name, l_name):
+    '''Take a first and last naem and format it
+    to return the title case version of the name.'''
     if f_name == '' or l_name == '':
         return "You didn't provide valid inputs."
     # print(f_name.title())
