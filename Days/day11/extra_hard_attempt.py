@@ -50,6 +50,11 @@ class BlackJack:
                     print("Your wont this round.")
                 else:
                     print("This round was a draw.")
+                    
+                self.your_hand = []
+                self.your_total = 0
+                self.dealers_hand = []
+                self.dealer_total = 0
         else:
             self.dealer_busts()
 
