@@ -51,6 +51,11 @@ class BlackJack:
                     print("Your won this round.")
                 else:
                     print("This round was a draw.")
+                    
+                self.your_hand = []
+                self.your_total = 0
+                self.dealers_hand = []
+                self.dealer_total = 0
         else:
             self.dealer_busts()
 
@@ -112,7 +117,7 @@ class BlackJack:
             self.your_hand.append(self.deck.pop())
             self.dealers_hand.append(self.deck.pop())
 
-            self.evaluate_your_hand()
+        self.evaluate_your_hand()
 
 
     def evaluate_dealers_hand(self):
