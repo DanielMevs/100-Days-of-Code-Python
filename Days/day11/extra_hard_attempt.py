@@ -1,5 +1,7 @@
 # Difficulty Extra Hard 😭: Only use Hints 1 & 2 to complete the project.
 # 52 card deck
+# author: Daniel Mevs
+
 from random import shuffle
 from art import logo
 
