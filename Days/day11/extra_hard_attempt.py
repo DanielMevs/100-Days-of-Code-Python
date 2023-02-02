@@ -109,7 +109,7 @@ class BlackJack:
             self.your_hand.append(self.deck.pop())
             self.dealers_hand.append(self.deck.pop())
 
-            self.evaluate_your_hand()
+        self.evaluate_your_hand()
 
 
     def evaluate_dealers_hand(self):
