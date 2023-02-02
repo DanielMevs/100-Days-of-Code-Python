@@ -2,6 +2,7 @@ import random
 from os import system
 from art import logo
 
+
 def calculate_score(cards):
     '''Take a list of cards and return the score calculated from the cards'''
 
@@ -15,6 +16,8 @@ def calculate_score(cards):
         return sum(cards)
 
     return sum(cards)
+
+
 
 def compare(user_score, computer_score):
     if user_score == computer_score:
@@ -42,7 +45,6 @@ def deal_card():
 def play_game():
     user_cards = []
     computer_cards = []
-
 
     for _ in range(2):
         user_cards.append(deal_card())
