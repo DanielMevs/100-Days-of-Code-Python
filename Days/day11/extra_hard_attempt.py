@@ -1,6 +1,7 @@
 # Difficulty Extra Hard 😭: Only use Hints 1 & 2 to complete the project.
 # 52 card deck
 from random import shuffle
+from art import logo
 
 SCORE_LIMIT = 21
 HAND_LIMIT = 17
@@ -185,12 +186,17 @@ class BlackJack:
                 
 
 
+def main():
+    print(logo)
+    new_game = BlackJack()
+    is_interested = True
 
-new_game = BlackJack()
-is_interested = True
+    while(is_interested):
+        new_game.play_round()
+        answer = input("Are you still interested in this game? 'y' for yes and any other answer for no: ")
+        if answer != 'y' or answer != 'Y':
+            is_interested = False
 
-while(is_interested):
-    new_game.play_round()
-    answer = input("Are you still interested in this game? 'y' for yes and any other answer for no: ")
-    if answer != 'y' or answer != 'Y':
-        is_interested = False
+
+if __name__ == '__main__':
+    main()
