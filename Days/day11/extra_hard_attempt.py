@@ -22,6 +22,7 @@ class BlackJack:
 
         self.place_wager()
         
+
     def get_deck(self):
         numbered_cards = [i for i in range(2, 11)]
         special_cards = 3*[10]
@@ -47,7 +48,7 @@ class BlackJack:
                 if self.dealer_total > self.your_total:
                     print("You lost this round.")
                 elif self.dealer_total < self.your_total:
-                    print("Your wont this round.")
+                    print("Your won this round.")
                 else:
                     print("This round was a draw.")
         else:
@@ -94,13 +95,15 @@ class BlackJack:
         self.dealers_hand = []
         self.dealer_total = 0
         
-                
+
 
     def hit(self):
         if (len(self.deck) != 0):
             self.get_deck()
         self.my_hand.append(self.deck.pop())
         print('Your new hand: ' + str(self.your_hand) + '\n')
+
+
     
     def deal_both_hands(self):
         for i in range(2):
@@ -142,6 +145,7 @@ class BlackJack:
                 self.dealer_total = self.your_hand[ace_index][0] + self.your_hand[ace_index-1]
         else:
             self.dealer_total = sum(self.dealers_hand)
+
 
     def evaluate_your_hand(self):
         ace_index = None
