@@ -5,6 +5,7 @@ EASY_LEVEL_TURNS = 10
 HARD_LEVEL_TURNS = 5
 
 turns = 0
+
 def check_answer(guess, answer, turns):
     """checks answers against guess. Returns the number of turns remaining."""
     if guess > answer:
@@ -22,13 +23,14 @@ def set_difficulty():
         return EASY_LEVEL_TURNS
     else:
         return HARD_LEVEL_TURNS
+
+
 def game():
     print(logo)
     print("Welcome to the Number Guessing Game!")
     print("I'm thinking of a number between 1 and 100.")
     answer = randint(1, 100)
     # print(f"Psst, the correct answer is {answer}")
-
 
     turns = set_difficulty()
     

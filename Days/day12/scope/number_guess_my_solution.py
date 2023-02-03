@@ -36,7 +36,7 @@ def play_game(target_number, difficulty):
     print('You lose (ran out of tries).')
    
 
-def start_game():
+def main():
     print(logo)
     greet()
     target_number = pick_number()
@@ -44,3 +44,6 @@ def start_game():
         play_game(target_number, EASY)   
     else:
         play_game(target_number, HARD)
+
+if __name__== '__main__':
+    main()
