@@ -25,7 +25,7 @@ def is_easy():
 def play_game(target_number, difficulty):
     for i in range(difficulty):
         print(f'You have {i + 1} attempts remaining to guess the number.')
-        guess = input("Take a guess: ")
+        guess = int(input("Take a guess: "))
         if guess < target_number:
             print("Too low. Guess again")
         if guess > target_number:
