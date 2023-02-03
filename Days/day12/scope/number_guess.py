@@ -8,8 +8,11 @@ HARD = 5
 def greet():
     print("Welcome to the Number Game!")
     print("I'm thinking of a number between 1 and 100.")
+
+
 def pick_number():
     return choice(list(_ for _ in range(100)))
+
 
 def is_easy():
     answer = input('Type "e" for easy and any other key for hard')
@@ -18,17 +21,26 @@ def is_easy():
     else:
         return False
 
-def play_game(attempt, target_number):
-    won = False
-    print(f'You have {attempt} attempts remaining to guess the number.')
+
+def play_game(target_number, difficulty):
+    for i in range(difficulty):
+        print(f'You have {i + 1} attempts remaining to guess the number.')
+        guess = input("Take a guess: ")
+        if guess < target_number:
+            print("Too low. Guess again")
+        if guess > target_number:
+            print("Too high. Guess again")
+        else:
+            print("Spot on. You win!")
+            return True
+    print('You lose (ran out of tries).')
    
+
 def start_game():
     print(logo)
     greet()
     target_number = pick_number()
     if(is_easy()):
-        for i in range(EASY):
-            play_game(i + 1, target_number)
+        play_game(target_number, EASY)   
     else:
-        for i in range(HARD):
-            play_game(i + 1, target_number)
+        play_game(target_number, HARD)
