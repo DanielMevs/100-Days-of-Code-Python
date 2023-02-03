@@ -24,6 +24,16 @@ class BlackJack:
         print('Dealers hand: ' + '[X, ' + str(self.dealers_hand[0]) + ']')
 
         self.place_wager()
+
+
+    def deal_both_hands(self):
+        for _ in range(2):
+            if (len(self.deck) != 0):
+                self.get_deck()
+            self.your_hand.append(self.deck.pop())
+            self.dealers_hand.append(self.deck.pop())
+
+        self.evaluate_your_hand()
         
 
     def get_deck(self):
@@ -51,14 +61,11 @@ class BlackJack:
                 if self.dealer_total > self.your_total:
                     print("You lost this round.")
                 elif self.dealer_total < self.your_total:
-                    print("Your won this round.")
+                    print("You won this round.")
                 else:
                     print("This round was a draw.")
                     
-                self.your_hand = []
-                self.your_total = 0
-                self.dealers_hand = []
-                self.dealer_total = 0
+                self.clear_table()
         else:
             self.dealer_busts()
 
@@ -91,17 +98,11 @@ class BlackJack:
 
     def you_bust(self):
         print('\nBUST. Your hand was greater that 21. You lose.')
-        self.your_hand = []
-        self.your_total = 0
-        self.dealers_hand = []
-        self.dealer_total = 0
+        self.clear_table()
 
     def dealer_busts(self):
         print("\nBUST. Your dealer's hand was greater that 21. You win!")
-        self.your_hand = []
-        self.your_total = 0
-        self.dealers_hand = []
-        self.dealer_total = 0
+        self.clear_table()
         
 
 
@@ -112,15 +113,11 @@ class BlackJack:
         print('Your new hand: ' + str(self.your_hand) + '\n')
 
 
-    
-    def deal_both_hands(self):
-        for i in range(2):
-            if (len(self.deck) != 0):
-                self.get_deck()
-            self.your_hand.append(self.deck.pop())
-            self.dealers_hand.append(self.deck.pop())
-
-        self.evaluate_your_hand()
+    def clear_table(self):
+        self.your_hand = []
+        self.your_total = 0
+        self.dealers_hand = []
+        self.dealer_total = 0
 
 
     def evaluate_dealers_hand(self):
