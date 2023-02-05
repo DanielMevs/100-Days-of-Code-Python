@@ -17,9 +17,12 @@ class BlackJack:
         self.dealer_total = 0
         self.get_deck()
 
+    def __repr__(self):
+        return f'Your deck: {str(self.deck)}'
+
     def play_round(self):
         self.deal_both_hands()
-        print('Cards left in deck: ' + str(len(self.deck)))
+        # print('Cards left in deck: ' + str(len(self.deck)))
         print('Your hand: ' + str(self.your_hand) + '\n\n')
         print('Dealers hand: ' + '[X, ' + str(self.dealers_hand[0]) + ']')
 
@@ -54,18 +57,20 @@ class BlackJack:
         # self.dealers_total = sum(self.dealers_hand)
         self.evaluate_dealers_hand()
         if (self.dealer_total <= SCORE_LIMIT):
-            if self.dealer_total < HAND_LIMIT:
+            while self.dealer_total < HAND_LIMIT:
                 self.dealer_hits()
-                self.evaluate_game()
+            if self.dealer_total > SCORE_LIMIT:
+                self.dealer_busts()
+            elif self.dealer_total > self.your_total:
+                print("You lost this round.")
+            elif self.dealer_total < self.your_total:
+                print("You won this round!")
+            elif self.your_total > SCORE_LIMIT:
+                self.you_bust()
             else:
-                if self.dealer_total > self.your_total:
-                    print("You lost this round.")
-                elif self.dealer_total < self.your_total:
-                    print("You won this round.")
-                else:
-                    print("This round was a draw.")
+                print("This round was a draw.")
                     
-                self.clear_table()
+            self.clear_table()
         else:
             self.dealer_busts()
 
@@ -73,16 +78,20 @@ class BlackJack:
 
 
     def place_wager(self):
-        if (self.your_total <= SCORE_LIMIT):
-            if self.your_total < HAND_LIMIT:
+        print(f'Your total: {self.your_total}')
+        if self.your_total <= SCORE_LIMIT:
+            while self.your_total < HAND_LIMIT:
                 self.hit()
-            elif self.your_total >= HAND_LIMIT:
-                willHit = input('Hit? ("y" for yes and anything else for "no"): ')
-                if willHit == 'y' or willHit == 'Y':
+
+            willHit = True
+            while self.your_total < SCORE_LIMIT and willHit:
+                willHit = input('Hit? ("y" for yes and anything else for "no"): ').lower()
+                if willHit == 'y':
                     self.hit()
-                    self.place_wager()
                 else:
-                    self.evaluate_game()           
+                    willHit = False
+            self.evaluate_game()
+         
         else:
             self.bust()
 
@@ -93,6 +102,7 @@ class BlackJack:
         if (len(self.deck) != 0):
             self.get_deck()
         self.dealers_hand.append(self.deck.pop())
+        self.evaluate_dealers_hand()
         print(f"Dealer's new hand: {str(self.dealers_hand)}")
 
 
@@ -109,7 +119,9 @@ class BlackJack:
     def hit(self):
         if (len(self.deck) != 0):
             self.get_deck()
-        self.my_hand.append(self.deck.pop())
+        self.your_hand.append(self.deck.pop())
+        self.evaluate_your_hand()
+        
         print('Your new hand: ' + str(self.your_hand) + '\n')
 
 
@@ -121,7 +133,7 @@ class BlackJack:
 
 
     def evaluate_dealers_hand(self):
-        ace_index = None
+        ace_index = 0
         dealer_aces = 0
         for index, card in enumerate(self.dealers_hand):
             if isinstance(card, tuple):
@@ -139,15 +151,18 @@ class BlackJack:
                 self.dealers_hand[ace_index-1] = 11
                 self.dealer_total = 12
         elif dealer_aces == 1:
-            if self.your_hand[ace_index][1] + self.your_hand[ace_index-1] < SCORE_LIMIT:
+            if self.dealers_hand[ace_index][1] + self.dealers_hand[ace_index-1] < SCORE_LIMIT:
                 print('The dealer has one ace.')
                 answer = input("Enter 'y' to consider their ace as 11 or any other key for 1")
                 if answer == 'y' or answer == 'Y':
-                    self.dealer_total = self.dealers_hand[ace_index][1] + self.dealers_hand[ace_index-1]
+                    self.dealers_hand[ace_index] = 11
+                    self.dealer_total = self.dealers_hand[ace_index] + self.dealers_hand[ace_index-1]
                 else:
-                    self.dealer_total = self.dealers_hand[ace_index][0] + self.dealers_hand[ace_index-1]
+                    self.dealers_hand[ace_index] = 1
+                    self.dealer_total = self.dealers_hand[ace_index] + self.dealers_hand[ace_index-1]
             else:
-                self.dealer_total = self.your_hand[ace_index][0] + self.your_hand[ace_index-1]
+                self.dealer_total = self.dealers_hand[ace_index]
+                self.dealer_total = self.your_hand[ace_index] + self.your_hand[ace_index-1]
         else:
             self.dealer_total = sum(self.dealers_hand)
 
@@ -161,6 +176,7 @@ class BlackJack:
                 ace_index = index
         if your_aces == 2:
             print('You have two aces.')
+            print(f'Your other card is {str(self.your_hand[ace_index-1])}')
             answer = input("Enter '2' to consider each ace as 1 for a count of 2 or any other key to consider it  as a 1 and 11 for a count of 12: ")
             if answer=='2':
                 self.your_hand[ace_index] = 1
@@ -173,13 +189,20 @@ class BlackJack:
         elif your_aces == 1:
             if self.your_hand[ace_index][1] + self.your_hand[ace_index-1] < SCORE_LIMIT:
                 print('You have one ace.')
-                answer = input("Enter 'y' to consider your ace as 11 or any other key for 1")
-                if answer == 'y' or answer == 'Y':
-                    self.your_total = self.your_hand[ace_index][1] + self.your_hand[ace_index-1]
+                print(f'Your other card is {str(self.your_hand[ace_index-1])}')
+                answer = input("Enter 'y' to consider your ace as 11 or any other key for 1: ").lower()
+                if answer == 'y':
+                    self.your_hand[ace_index] = 11
+                    self.your_total = self.your_hand[ace_index] + self.your_hand[ace_index-1]
+                    
                 else:
-                    self.your_total = self.your_hand[ace_index][0] + self.your_hand[ace_index-1]
+                    self.your_hand[ace_index] = 1
+                    self.your_total = self.your_hand[ace_index] + self.your_hand[ace_index-1]
+                    
             else:
-                self.your_total = self.your_hand[ace_index][0] + self.your_hand[ace_index-1]
+                self.your_hand[ace_index] = 11
+                self.your_total = self.your_hand[ace_index] + self.your_hand[ace_index-1]
+                
         else:
             self.your_total = sum(self.your_hand)
                 
@@ -188,13 +211,11 @@ class BlackJack:
 def main():
     print(logo)
     new_game = BlackJack()
+    # print(new_game)
     is_interested = True
 
-    while(is_interested):
+    while input("Play new game? 'y/Y' for yes and any other answer for no: ").lower() =='y': 
         new_game.play_round()
-        answer = input("Are you still interested in this game? 'y' for yes and any other answer for no: ")
-        if answer != 'y' or answer != 'Y':
-            is_interested = False
 
 
 if __name__ == '__main__':
