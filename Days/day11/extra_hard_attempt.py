@@ -4,6 +4,8 @@
 
 from random import shuffle
 from art import logo
+from os import system
+import platform
 
 SCORE_LIMIT = 21
 HAND_LIMIT = 17
@@ -130,7 +132,13 @@ class BlackJack:
         self.your_total = 0
         self.dealers_hand = []
         self.dealer_total = 0
-
+        
+        if platform.system() == 'Darwin':
+            system('clear')
+        elif platform.system() == 'Windows':
+            system('cls')
+        else:
+            system('clear')
 
     def evaluate_dealers_hand(self):
         ace_index = 0
