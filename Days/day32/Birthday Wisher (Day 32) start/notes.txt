@@ -1,0 +1,2 @@
+HOST     GMAIL            Hotmail         Yahoo
+     smtp.gmail.com    smtp.live.com   smtp.mail.yahoo.com
