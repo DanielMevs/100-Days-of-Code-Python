@@ -26,3 +26,4 @@ if weekday == 5:
         print('Email sent!')
     except Exception as e:
         print(e)
+        print("unsuccessful")
