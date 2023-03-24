@@ -10,7 +10,7 @@ class DataManager:
 
     def get_destination(self):
         response = requests.get(url=SHEETY_PRICES_ENDPOINT)
-        data = requests.get(url=SHEETY_PRICES_ENDPOINT)
+        data = response.json()
         self.destination_data = data["prices"]
         return self.destination_data
     
