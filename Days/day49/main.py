@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-chrome_path = "C:\\Users\Dani\\Development\\chromedriver"
+from selenium.common.exceptions import ElementNotInteractableException
+chrome_path = "your chrome path"
 import time
 
 driver = webdriver.Chrome(executable_path=chrome_path)
@@ -34,6 +35,8 @@ def cancel_application():
     cancel_icon = driver.find_element(By.CSS_SELECTOR, '[type="cancel-icon"]')
     cancel_icon.click()
 
+    time.sleep(2)
+
     discard_btn = driver.find_element(By.CSS_SELECTOR, '[data-control-name="discard_application_confirm_btn"]')
     discard_btn.click()
 
@@ -54,11 +57,38 @@ for job in jobs:
 
     time.sleep(5)
 
-    inputs = driver.find_elements(By.CSS_SELECTOR, 'input')[:5]
+    try:
 
-    for input in inputs:
-        if input.get_attribute('type') == 'text' and not input.text:
-            input.send_keys(PHONE_NUMBER)
+        inputs = driver.find_elements(By.CSS_SELECTOR, 'input')[:5]
+
+        for input in inputs:
+            if input.get_attribute('type') == 'text' and not input.text:
+                input.send_keys(PHONE_NUMBER)
+        
+        # next_btn = driver.find_elements(By.CSS_SELECTOR, '[aria-label="Continue to next step"]')
+        # if not next_btn:
+        #     continue
+        # else:
+        #     next_btn[0].click()
+
+        # time.sleep(3)
+
+        # review_btn = driver.find_elements(By.CSS_SELECTOR, '[aria-label="Review your application"]')
+        # if not review_btn:
+        #     continue
+        # else:
+        #     review_btn[0].click()
+
+        # time.sleep(3)
+
+        submit_btn = driver.find_elements(By.CSS_SELECTOR, '[aria-label="Submit application"]')
+        if not submit_btn:
+            continue
+        else:
+            submit_btn[0].click()
+
+    except ElementNotInteractableException:
+        cancel_application()
 
 
 
