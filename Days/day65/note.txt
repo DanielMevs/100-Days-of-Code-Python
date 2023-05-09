@@ -1,0 +1,19 @@
+Color Theory
+
+Red = Intensity, Love, Energy
+Yellow = Joy, Intellect, Attention
+Green = Growth, Freshness, Safety
+Blue = Stability, trust, serenity
+Purple = Royalty, Wealth, Femininity
+
+Analogous Colors
+L> Taking two colors that are next to each other on the color wheel/palette
+L>Con: not the best for standing out 
+
+Complimentary Color palette
+L>Used to make message "pop"
+L> Con: Styling text and text background can look jarring.
+
+Triadic Color palette
+L> Drawing an equilateral triangle on the color palette and using color at edges
+L> Similiar concept with a square.
