@@ -17,3 +17,40 @@ L> Con: Styling text and text background can look jarring.
 Triadic Color palette
 L> Drawing an equilateral triangle on the color palette and using color at edges
 L> Similiar concept with a square.
+
+Typography
+
+Fonts matter, mkay
+
+Serif: inspired by marble from antiquity
+L>Characterized by serious, authoritative look
+L>Feet of letter are flat
+L> Can be found in a letter head/architectural design magazine
+L> To advertize things that are considered aged and refined
+L>Traditional, stable, respectable
+L>Used more for titles/headings
+
+San-Serif
+L>Like serif but without the Feet
+L>Used to convey approachability; more contemporary/modern
+L> Sensible, simple, straightforward
+L> Used more for body text
+L> Considered more readable i.e. Verdana
+
+They did an experiment where they timed how long a control group of drivers
+would take between looking down at the dashboard, gathering and processing the information 
+they were looking for, and looking back up at the road. They found just by changing the 
+font from San-Serif Grotesque to Sans-Serif Humanist, they were able to dramatically reduce
+this time (by 30-40%). That difference may be the difference between life and death.
+Readability counts. The more your audience reads, the more likely they're going to buy 
+into your product.
+
+General rules of thumb
+Similar moods
+Stick to 2 Fonts
+Consider time Era
+Contrast Serif-ness (creates interest in your design)
+Weights (bold heading, body can be thin/light)
+
+
+
