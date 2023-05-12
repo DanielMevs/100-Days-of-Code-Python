@@ -57,13 +57,31 @@ User Interface design
 Bigger, bolder, square things are more noticalbe to the human brain
 Designers use this knowledge to define hierarchy
 Ways we can establish hierarchy include:
-Color
+- Color
 L>Colors that pop out and stand out and have contrast with their
 background tend to be used for high hierarchy
-Size
+- Size
 L>The first thing/attention grabber the user want you to see first will tend to 
 be bigger than the rest of the text of the screen.
-
-
-
+- Layout
+L>You can create more interest by creating a block of text and then interspersed 
+with pictures and then create different sizes, shapes and hierarchies to make
+your design more interesting.
+L>There is an optimal line length. Too long and it get too tedious to read.
+Too short and it's a bit choppy.
+L> Aim for about 40-60 characters per line so it feels comfortable to the user
+L> Easiest way to make your design look professional is to reduce the number
+of alignment points.
+L> Use the grid lines in your design to help you visualize where the starting points
+of each element is and try to line the all up.
+- White Space
+L> A lot of luxury shope/designer stores inject white space around their products
+L> Spacing things out suddenly makes things look more expensive
+L> Spacing items close together makes it look more like a discount store.
+L> By adding white-space in your design, you can make your design look a lot more
+minimalist and elevate it at the same time.
+- Audience
+L> Let's say your designing a children's concert. What would appeal to them and convey
+to them that it's going to be of interest to them. 
+L> Create a different style for different people tailored to their unique tastes.
 
