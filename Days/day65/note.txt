@@ -52,5 +52,18 @@ Consider time Era
 Contrast Serif-ness (creates interest in your design)
 Weights (bold heading, body can be thin/light)
 
+User Interface design
+
+Bigger, bolder, square things are more noticalbe to the human brain
+Designers use this knowledge to define hierarchy
+Ways we can establish hierarchy include:
+Color
+L>Colors that pop out and stand out and have contrast with their
+background tend to be used for high hierarchy
+Size
+L>The first thing/attention grabber the user want you to see first will tend to 
+be bigger than the rest of the text of the screen.
+
+
 
 
