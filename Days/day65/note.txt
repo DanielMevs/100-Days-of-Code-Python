@@ -85,3 +85,28 @@ L> Let's say your designing a children's concert. What would appeal to them and 
 to them that it's going to be of interest to them. 
 L> Create a different style for different people tailored to their unique tastes.
 
+- User Experience Design (UX)
+
+The difference between user experience and design
+L> Design we often think of having an aesthetic, what 
+we think looks good and enforcing that on the user
+L> User experience is meant to be invisible
+L> Good user experience is achieved when a website
+is meant to be unobtrusive and lets you do your thing
+L> Feels like everything is easier and effortless
+L> These 5 Ways You can produce this effect:
+1 - Simplicity
+Simple is better than complex and cluttered. 
+2 - Consistency
+Keep your designs consistent but also keep the functionality of your
+product consistent. 
+Inconsistency means that a user is going to be confused when they hae to go from
+one part of the website to another, having to relearn how to use your website.
+3 - Take into account People's Reading Patterns
+Scientists have researched how human eyes track a webpage and which parts they look
+at when they're browsing. 
+One of the ost common reading patterns is called the F-pattern where the eye starts
+at the top left of the corner and then it tracks the right and then it flips back again,
+browsing down to the left gutter.
+Another common pattern is the Z-pattern where our eyes go from left to right and then 
+zig-zag down all the way the down the website.
