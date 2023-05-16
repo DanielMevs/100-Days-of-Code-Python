@@ -110,3 +110,16 @@ at the top left of the corner and then it tracks the right and then it flips bac
 browsing down to the left gutter.
 Another common pattern is the Z-pattern where our eyes go from left to right and then 
 zig-zag down all the way the down the website.
+- Many websites, such as Facebook, use the Z-pattern to accomadate peoples' reading pattern
+4. All Platform design
+- Use your space efficiently
+- Take into account people that will be using small screens as well as large screens.
+5. Don't Use Your Power for Evil
+- Dark Patterns (people using their knowledge of User experience and design to do bad things).
+L> Promoting an action that is beneficial to the company or designer but not necessarily what
+the user wants.
+L> Designers might use hierarchy to make you click on a button that makes them the most money
+L> Designers could put a curved line on one of their products, and you thinking it's a hair will
+click on it and it takes you to the site for that product
+L> Long, convoluted drop-downs and poorly-worded check-boxes are examples of dark patterns.
+
