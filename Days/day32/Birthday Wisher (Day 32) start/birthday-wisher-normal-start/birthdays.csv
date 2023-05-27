@@ -1,9 +1,7 @@
 name,email,year,month,day
-Test,danydacoder@gmail.com,1994,3,18
-Julie,jlfrdmn@gmail.com,1966,5,18
-Youri,yourimevs@yahoo.com,1967,5,17
-Brenda,bel1000@aol.com,1968,12,24
-Diane,dianelevine@comcast.net,1975,4,14
-Dina,dinasalimbene@yahoo.com,1974,4,13
-Bobby,bparnessbrams@gmail.com,1941,3,10
+Test,user1@example.com,XXXX, X, XX
+Morgan,user0@example.com,19XX,X,XX
+Cornilius,user2@example.com',XXXX,X,XX
+Barnes,user3@example.com,XXXX,XX,XX
+Lane,user4@example.com,XXXX,X,XX
 
