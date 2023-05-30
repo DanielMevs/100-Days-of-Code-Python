@@ -39,3 +39,15 @@ print(clean_df['Undergraduate Major'].loc[min_starting_med_sal_idx])
 
 min_mid_car_sal_idx = clean_df['Mid-Career Median Salary'].idxmin()
 print(clean_df.loc[min_mid_car_sal_idx])
+
+
+# - To find the difference between two columns
+spread_col = clean_df['Mid-Career 90th Percentile Salary'].subtract(clean_df['Mid-Career 10th Percentile Salary'])
+
+# - To insert this new column into our dataframe
+clean_df.insert(1, 'Spread', spread_col)
+print(clean_df.head())
+
+# - Sort values by a specified column (in ascending order by default)
+low_risk = clean_df.sort_values('Spread')
+print(low_risk[['Undergraduate Major', 'Spread']].head())
