@@ -51,3 +51,20 @@ print(clean_df.head())
 # - Sort values by a specified column (in ascending order by default)
 low_risk = clean_df.sort_values('Spread')
 print(low_risk[['Undergraduate Major', 'Spread']].head())
+
+# - Majors with the highest potential
+highest_potential = clean_df.sort_values('Mid-Career 90th Percentile Salary', ascending=False)
+print(highest_potential[['Undergraduate Major', 'Mid-Career 90th Percentile Salary']].head())
+
+# - Majors with the greatest spread in salaries
+highest_spread = clean_df.sort_values('Spread', ascending=False)
+print(highest_spread[['Undergraduate Major', 'Spread']].head())
+
+# - Which category of degrees has the highest average salary?
+# - To answer this question, let's use the groupby() method
+group_count = clean_df.groupby('Group').count()
+avg_sal = clean_df.groupby('Group').mean()
+
+# - To tell Pandas to format the floats being displayed
+pd.options.display.float_format = '{:,.2f}'.format
+print(avg_sal)
