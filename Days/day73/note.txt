@@ -1,0 +1,3 @@
+# Random ideas: name a project is_all_you_need.
+#  Opening it is simple. All you need is code .
+code is_all_you_need
