@@ -4,11 +4,10 @@ Learning Points and Summary
 - Filtering Pandas DataFrames based on multiple conditions using both .loc[] 
 and .query()
 - Creating bubble charts using the Seaborn Library
-- Style Seaborn charts using the pre-built styles and by modifying
+- Styling Seaborn charts using the pre-built styles and by modifying
  the Matplotlib parameters
- - Use floor division (i.e., integer division) to convert years to decades
- - Use Seaborn to superimpose a linear regression over our data
- - Make a judgement if our regression is good or bad based on how well
+ - Using floor division (i.e., integer division) to convert years to decades
+ - Using Seaborn to superimpose a linear regression over our data
+ - Making a judgement if our regression is good or bad based on how well
  the model fits our data and the r-squared metric
- - Run regression with scikit-learn and calculate the coefficients
- 
+ - Running regression with scikit-learn and calculate the coefficients
