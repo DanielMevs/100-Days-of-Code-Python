@@ -321,3 +321,318 @@ print(f'Test data makes up the remaining {test_pct:0.3}%.')
 Use sklearn to run the regression on the training dataset.
  How high is the r-squared for the regression on the training data?
 '''
+
+regr = LinearRegression()
+regr.fit(X_train, y_train)
+rsquared = regr.score(X_train, y_train)
+
+print(f'Training data r-squared: {rsquared:.2}')
+
+
+### Evaluate the Coefficients of the Model
+
+
+'''
+
+**Challenge** Print out the coefficients (the thetas in the equation above)
+ for the features. Hint: You'll see a nice table if you stick the coefficients 
+ in a DataFrame. 
+
+'''
+
+regr_coef = pd.DataFrame(data=regr.coef_, index=X_train.columns, columns=['Coefficient'])
+print(regr_coef)
+
+
+# Premium for having an extra room
+premium = regr_coef.loc['RM'].values[0] * 1000  # i.e., ~3.11 * 1000
+print(f'The price premium for having an extra room is ${premium:.5}')
+
+
+### Analyse the Estimated Values & Regression Residuals
+
+# **Challenge**: Create two scatter plots.
+
+predicted_vals = regr.predict(X_train)
+residuals = (y_train - predicted_vals)
+
+
+# Original Regression of Actual vs. Predicted Prices
+plt.figure(dpi=100)
+plt.scatter(x=y_train, y=predicted_vals, c='indigo', alpha=0.6)
+plt.plot(y_train, y_train, color='cyan')
+plt.title(f'Actual vs Predicted Prices: $y _i$ vs $\hat y_i$', fontsize=17)
+plt.xlabel('Actual prices 000s $y _i$', fontsize=14)
+plt.ylabel('Prediced prices 000s $\hat y _i$', fontsize=14)
+plt.show()
+
+# Residuals vs Predicted values
+plt.figure(dpi=100)
+plt.scatter(x=predicted_vals, y=residuals, c='indigo', alpha=0.6)
+plt.title('Residuals vs Predicted Values', fontsize=17)
+plt.xlabel('Predicted Prices $\hat y _i$', fontsize=14)
+plt.ylabel('Residuals', fontsize=14)
+plt.show()
+
+
+'''
+
+**Challenge**
+
+* Calculate the mean and the skewness of the residuals. 
+* Again, use Seaborn's `.displot()` to create a histogram and superimpose the Kernel Density Estimate (KDE)
+* Is the skewness different from zero? If so, by how much? 
+* Is the mean different from zero?
+
+'''
+
+
+# Residual Distribution Chart
+resid_mean = round(residuals.mean(), 2)
+resid_skew = round(residuals.skew(), 2)
+
+sns.displot(residuals, kde=True, color='indigo')
+plt.title(f'Residuals Skew ({resid_skew}) Mean ({resid_mean})')
+plt.show()
+
+'''
+
+**Challenge**
+
+Investigate if the target `data['PRICE']` could be a suitable candidate for
+ a log transformation. 
+
+* Use Seaborn's `.displot()` to show a histogram and KDE of the price data. 
+* Calculate the skew of that distribution.
+
+* Plot the log prices using Seaborn's `.displot()` and calculate the skew. 
+* Which distribution has a skew that's closer to zero? 
+
+
+'''
+
+
+tgt_skew = data['PRICE'].skew()
+sns.displot(data['PRICE'], kde='kde', color='green')
+plt.title(f'Normal Prices. Skew is {tgt_skew:.3}')
+plt.show()
+
+y_log = np.log(data['PRICE'])
+sns.displot(y_log, kde=True)
+plt.title(f'Log Prices. Skew is {y_log.skew():.3}')
+plt.show()
+
+
+plt.figure(dpi=150)
+plt.scatter(data.PRICE, np.log(data.PRICE))
+
+plt.title('Mapping the Original Price to a Log Price')
+plt.ylabel('Log Price')
+plt.xlabel('Actual $ Price in 000s')
+plt.show()
+
+
+## Regression using Log Prices
+
+'''
+
+**Challenge**: 
+
+* Use `train_test_split()` with the same random state as before to make the results comparable. 
+* Run a second regression, but this time use the transformed target data. 
+* What is the r-squared of the regression on the training data? 
+* Have we improved the fit of our model compared to before based on this measure?
+
+'''
+
+
+new_target = np.log(data['PRICE']) # Use log prices
+features = data.drop('PRICE', axis=1)
+
+X_train, X_test, log_y_train, log_y_test = train_test_split(features, 
+                                                    new_target, 
+                                                    test_size=0.2, 
+                                                    random_state=10)
+
+log_regr = LinearRegression()
+log_regr.fit(X_train, log_y_train)
+log_rsquared = log_regr.score(X_train, log_y_train)
+
+log_predictions = log_regr.predict(X_train)
+log_residuals = (log_y_train - log_predictions)
+
+print(f'Training data r-squared: {log_rsquared:.2}')
+
+
+## Evaluating Coefficients with Log Prices
+
+'''
+
+**Challenge**: Print out the coefficients of the new regression model. 
+
+* Do the coefficients still have the expected sign? 
+* Is being next to the river a positive based on the data?
+* How does the quality of the schools affect property prices? What happens to prices 
+as there are more students per teacher? 
+
+'''
+
+
+df_coef = pd.DataFrame(data=log_regr.coef_, index=X_train.columns, columns=['coef'])
+print(df_coef)
+
+
+## Regression with Log Prices & Residual Plots
+
+'''
+
+**Challenge**: 
+
+* Copy-paste the cell where you've created scatter plots of the actual 
+versus the predicted home prices as well as the residuals versus the predicted values. 
+* Add 2 more plots to the cell so that you can compare the regression outcomes with the 
+log prices side by side. 
+* Use `indigo` as the colour for the original regression and `navy` for the color 
+using log prices.
+
+'''
+
+# Graph of Actual vs. Predicted Log Prices
+plt.scatter(x=log_y_train, y=log_predictions, c='navy', alpha=0.6)
+plt.plot(log_y_train, log_y_train, color='cyan')
+plt.title(f'Actual vs Predicted Log Prices: $y _i$ vs $\hat y_i$ (R-Squared {log_rsquared:.2})', fontsize=17)
+plt.xlabel('Actual Log Prices $y _i$', fontsize=14)
+plt.ylabel('Prediced Log Prices $\hat y _i$', fontsize=14)
+plt.show()
+
+# Original Regression of Actual vs. Predicted Prices
+plt.scatter(x=y_train, y=predicted_vals, c='indigo', alpha=0.6)
+plt.plot(y_train, y_train, color='cyan')
+plt.title(f'Original Actual vs Predicted Prices: $y _i$ vs $\hat y_i$ (R-Squared {rsquared:.3})', fontsize=17)
+plt.xlabel('Actual prices 000s $y _i$', fontsize=14)
+plt.ylabel('Prediced prices 000s $\hat y _i$', fontsize=14)
+plt.show()
+
+# Residuals vs Predicted values (Log prices)
+plt.scatter(x=log_predictions, y=log_residuals, c='navy', alpha=0.6)
+plt.title('Residuals vs Fitted Values for Log Prices', fontsize=17)
+plt.xlabel('Predicted Log Prices $\hat y _i$', fontsize=14)
+plt.ylabel('Residuals', fontsize=14)
+plt.show()
+
+# Residuals vs Predicted values
+plt.scatter(x=predicted_vals, y=residuals, c='indigo', alpha=0.6)
+plt.title('Original Residuals vs Fitted Values', fontsize=17)
+plt.xlabel('Predicted Prices $\hat y _i$', fontsize=14)
+plt.ylabel('Residuals', fontsize=14)
+plt.show()
+
+
+'''
+
+**Challenge**: 
+
+Calculate the mean and the skew for the residuals using log prices. 
+Are the mean and skew closer to 0 for the regression using log prices?
+
+'''
+
+
+# Distribution of Residuals (log prices) - checking for normality
+log_resid_mean = round(log_residuals.mean(), 2)
+log_resid_skew = round(log_residuals.skew(), 2)
+
+sns.displot(log_residuals, kde=True, color='navy')
+plt.title(f'Log price model: Residuals Skew ({log_resid_skew}) Mean ({log_resid_mean})')
+plt.show()
+
+sns.displot(residuals, kde=True, color='indigo')
+plt.title(f'Original model: Residuals Skew ({resid_skew}) Mean ({resid_mean})')
+plt.show()
+
+
+
+# Compare Out of Sample Performance
+
+'''
+
+**Challenge**
+
+Compare the r-squared of the two models on the test dataset. Which model does 
+better? Is the r-squared higher or lower than for the training dataset? Why?
+
+'''
+
+print(f'Original Model Test Data r-squared: {regr.score(X_test, y_test):.2}')
+print(f'Log Model Test Data r-squared: {log_regr.score(X_test, log_y_test):.2}')
+
+
+# Predict a Property's Value using the Regression Coefficients
+
+
+# Starting Point: Average Values in the Dataset
+features = data.drop(['PRICE'], axis=1)
+average_vals = features.mean().values
+property_stats = pd.DataFrame(data=average_vals.reshape(1, len(features.columns)), 
+                              columns=features.columns)
+print(property_stats)
+
+'''
+
+**Challenge**
+
+Predict how much the average property is worth using the stats above. 
+
+'''
+
+# Make prediction
+log_estimate = log_regr.predict(property_stats)[0]
+print(f'The log price estimate is ${log_estimate:.3}')
+
+# Convert Log Prices to Acutal Dollar Values
+dollar_est = np.e**log_estimate * 1000
+# or use
+dollar_est = np.exp(log_estimate) * 1000
+print(f'The property is estimated to be worth ${dollar_est:.6}')
+
+
+'''
+
+**Challenge**
+
+Keeping the average values for CRIM, RAD, INDUS and others, value a property
+ with the following characteristics:
+
+'''
+
+# Define Property Characteristics
+next_to_river = True
+nr_rooms = 8
+students_per_classroom = 20 
+distance_to_town = 5
+pollution = data.NOX.quantile(q=0.75) # high
+amount_of_poverty =  data.LSTAT.quantile(q=0.25) # low
+
+ 
+ 
+# Set Property Characteristics
+property_stats['RM'] = nr_rooms
+property_stats['PTRATIO'] = students_per_classroom
+property_stats['DIS'] = distance_to_town
+
+if next_to_river:
+    property_stats['CHAS'] = 1
+else:
+    property_stats['CHAS'] = 0
+
+property_stats['NOX'] = pollution
+property_stats['LSTAT'] = amount_of_poverty
+
+
+# Make prediction
+log_estimate = log_regr.predict(property_stats)[0]
+print(f'The log price estimate is ${log_estimate:.3}')
+
+# Convert Log Prices to Acutal Dollar Values
+dollar_est = np.e**log_estimate * 1000
+print(f'The property is estimated to be worth ${dollar_est:.6}')
