@@ -26,8 +26,8 @@ class TicTacToe:
     
 
     def col_win(self, player):
-        for row in self.board.T:
-            if all([cell == player for cell in row]):
+        for col in self.board.T:
+            if all([cell == player for cell in col]):
                 return True
         return False
     
