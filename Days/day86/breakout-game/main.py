@@ -7,6 +7,8 @@ import re
 import string
 import tkinter
 
+
+
 BLUE = "#0000ff"
 LAVENDER = "#aaaaff"
 WHITE = "#ffffff"
@@ -20,10 +22,14 @@ EDGE_OF_SCREEN = 0
 NO_MOVEMENT = 0
 
 
+
+
 Coordinates = namedtuple("Coordinates", ["top_left_x",
                                          "top_left_y",
                                          "bottom_right_x",
                                          "bottom_right_y"])
+
+
 
 
 class BaseWidget(metaclass=ABCMeta):
@@ -74,6 +80,8 @@ class BaseWidget(metaclass=ABCMeta):
         self.canvas.delete(self.item)
         return
     
+
+
 
 class BaseSettings(metaclass=ABCMeta):
     """fluent interface"""
@@ -250,6 +258,9 @@ class BaseSettings(metaclass=ABCMeta):
         return self
     
 
+
+
+
 class BallDirections(object):
     """holds the current direction of the ball
     Parameters
@@ -265,6 +276,9 @@ class BallDirections(object):
         self.vertical = vertical
         return
     
+
+
+
 
 class BallSettings(BaseSettings):
     """settings for the ball"""
@@ -358,6 +372,8 @@ class BallSettings(BaseSettings):
         return self
     
 
+
+
 class BallWidget(BaseWidget):
     """representation of the ball
 
@@ -432,6 +448,8 @@ class BallWidget(BaseWidget):
                 other.hit()
         return
     
+
+
 
 class PaddleSettings(BaseSettings):
     """settings for the player's paddle"""
@@ -539,6 +557,8 @@ class PaddleSettings(BaseSettings):
     
 
 
+
+
 class PaddleWidget(BaseWidget):
     """the player's paddle
     Parameters
@@ -590,6 +610,8 @@ class PaddleWidget(BaseWidget):
             super(PaddleWidget, self).move(offset, 0)
             if self.ball is not None:
                 self.ball.move(offset, 0)
+
+
 
 
 class BrickSettings(BaseSettings):
@@ -724,6 +746,8 @@ class BrickSettings(BaseSettings):
         return self
     
 
+
+
 class BrickWidget(BaseWidget):
     """represents a single brick
 
@@ -769,6 +793,8 @@ class BrickWidget(BaseWidget):
                                 fill=self.settings.colors[self.hits])
         return
     
+
+
 
 class FrameSettings(BaseSettings):
     """holds the settings for the game"""
@@ -861,6 +887,8 @@ class FrameSettings(BaseSettings):
         return self
     
 
+
+
 class BreakoutFrame(tkinter.Frame):
     """creates the breakout game
 
@@ -898,6 +926,8 @@ class BreakoutFrame(tkinter.Frame):
         self.parent.mainloop()
         return
     
+
+
 
 class GameSettings(BaseSettings):
     """settings for the game"""
@@ -987,7 +1017,9 @@ class GameSettings(BaseSettings):
         self.check_type(padding, "padding", int)
         self.check_positive(padding, "padding")
         return self
-    
+
+
+
 
 class Game(object):
     """builds and holds the game
@@ -1223,6 +1255,8 @@ class Game(object):
         self.frame()
         return
     
+
+
 
 
 if __name__ == '__main__':
