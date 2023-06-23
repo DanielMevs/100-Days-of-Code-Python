@@ -1,7 +1,7 @@
 /* to override Bootstrap styles for some things */
 
 body {
-    background-color: #0A6EBD;
+    background-color: #5A96E3;
     color: white;
     }
     
@@ -15,7 +15,7 @@ body {
       margin: 0;
       height: 100vh;
       color: white;
-      background-color: #0A6EBD;
+      background-color: #5A96E3;
     }
     
     .space-above {
