@@ -11,9 +11,9 @@ boxrec_page = response.text
 soup = BeautifulSoup(boxrec_page, "html.parser")
 name = soup.title.get_text().split('-')[0]
 print(f'Boxer name: {name}')
-age = soup.find(name="div", class_="stats-row__content text-left ml-3 headings-text-color")
-age_description = age.get_text() if age else "No Description"
-print(f'Age: {age_description}')
+stats = soup.find_all(name="div", class_="stats-row__content text-left ml-3 headings-text-color")
+for stat in stats:
+    print(stat.get_text())
 # height = soup.find(name="div", class_='stats-row__content text-left ml-3 headings-text-color')
 # height_description = height.get_text() if height else "No Description"
 # print(f'Height: {height_description}')
