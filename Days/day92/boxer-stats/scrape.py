@@ -20,6 +20,7 @@ for boxer in boxers:
     stats = get_stats(soup)
     
     boxer_stats.append(stats)
-    df = pd.DataFrame(boxer_stats)
-    df.to_csv('test.csv')
+
+df = pd.DataFrame(boxer_stats)
+df.to_csv('test.csv')
 
