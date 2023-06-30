@@ -22,5 +22,5 @@ for boxer in boxers:
     boxer_stats.append(stats)
 
 df = pd.DataFrame(boxer_stats)
-df.to_csv('test.csv')
+df.to_csv('boxer_stats.csv')
 
