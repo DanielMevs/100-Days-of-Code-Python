@@ -46,7 +46,11 @@ def find_get_weight_class_start_index(results: rs) -> int:
 
 
 def get_weight_class_alternative(soup: btfl_sp) -> str:
-    weight_class_rs = soup.find_all(name="div", class_="stats-row__title w-100 headings-font-family headings-text-color text-center d-flex align-items-center justify-content-center stats-row__title--normal text-truncate")
+    weight_class_rs = soup.find_all(name="div", class_="stats-row__title " + 
+                                    "w-100 headings-font-family headings" + 
+                                    "-text-color text-center d-flex align" + 
+                                    "-items-center justify-content-center "
+                                    + "stats-row__title--normal text-truncate")
     weight_class = ''
     weight_class_tracker = []
     
@@ -56,8 +60,9 @@ def get_weight_class_alternative(soup: btfl_sp) -> str:
         for word in words:
             weight_class_temp = ''
             if 'weight' in word.lower():
-                if words[i - 1].lower() == 'super':
-                    weight_class_temp += words[i - 1].title()
+                prev_word = words[i - 1].lower()
+                if prev_word == 'super' or prev_word == 'junior':
+                    weight_class_temp += prev_word.title()
                     weight_class_temp += ' ' + word.title()
                     if weight_class_temp not in weight_class_tracker:
                         if weight_class:
@@ -81,17 +86,21 @@ def get_weight_class_alternative(soup: btfl_sp) -> str:
     
 
 def get_rank(soup: btfl_sp, key: str) -> str:
-    weight_class_rs = soup.find_all(name="div", class_="stats-row__title w-100 headings-font-family headings-text-color text-center d-flex align-items-center justify-content-center stats-row__title--normal text-truncate")
+    weight_class_rs = soup.find_all(name="div", class_="stats-row__title " + 
+                                    "w-100 headings-font-family headings" + 
+                                    "-text-color text-center d-flex align" + 
+                                    "-items-center justify-content-center "
+                                    + "stats-row__title--normal text-truncate")
     organization = key.split('-')[0].lower()
     for result in weight_class_rs:
         i = 0
         belts_held = result.get_text().replace('\n', '').lower().split(' ')
-        print(belts_held)
-        print(organization in belts_held)
+        
         if organization in belts_held:
             return 'C'
     
     return '-'
+
 
 
 def get_weight_class(soup: btfl_sp) -> str:
@@ -127,14 +136,14 @@ def get_stats(soup: btfl_sp) -> dict:
         'WBA-Rank': '',
     }
 
-
+    
     stat_scrape = soup.find_all(name="div", class_="stats-row__content text-left ml-3 headings-text-color")
     
     
 
     i = find_get_stats_start_index(stat_scrape)
 
-    for key in stats.keys():
+    for key in list(stats.keys()):
         if key == 'name':
             stats['name'] = get_name(soup)
 
@@ -146,8 +155,16 @@ def get_stats(soup: btfl_sp) -> dict:
             stats[key] = get_rank(soup, key)
 
         else:
-            stats[key] = stat_scrape[i].get_text().replace(
+            temp = stat_scrape[i].get_text().replace(
                 '\n', '').replace("\'", "'").strip()
+            if 'rank' in key.lower():
+                if temp != '-':
+                    stats[key] = temp
+                else:
+                    rank = get_rank(soup, key)
+                    stats[key] = 'C' if rank == 'C' else temp
+            else:
+                stats[key] = temp
 
             i += 1
     
