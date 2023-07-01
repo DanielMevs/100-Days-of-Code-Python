@@ -4,9 +4,11 @@ from helper_functions import get_stats
 import pandas as pd
 
 
-boxers = ['Tyson Fury', 'Dmitry Bivol',
+boxers = ['Tyson Fury', 'Oleksandr Usyk', 
            'Saul Alvarez', 'Terence Crawford',
-           'Gervonta Davis']
+           'Dmitry Bivol', 'Gervonta Davis']
+
+
 
 boxer_stats = []
 

@@ -1,2 +1,0 @@
-Need to modify the get weight class helper
-function to be more dynamic.
