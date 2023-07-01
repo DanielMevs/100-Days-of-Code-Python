@@ -20,7 +20,6 @@ def find_get_stats_start_index(results: rs) -> int:
 
 
 def is_weight_class_accessible(results: rs) -> bool:
-    has_weight_class = False
 
     for result in results:
         val = result.get_text().strip()

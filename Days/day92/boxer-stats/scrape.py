@@ -7,7 +7,9 @@ import pandas as pd
 boxers = ['Tyson Fury', 'Oleksandr Usyk', 
            'Saul Alvarez', 'Terence Crawford',
            'Dmitry Bivol', 'Gervonta Davis',
-           'Teofimo Lopez', 'Errol Spence Jr']
+           'Teofimo Lopez', 'Errol Spence Jr',
+           'Vasyl Lomachenko', 'Devin Haney',
+           'Naoya Inoue', 'David Benavidez']
 
 
 
