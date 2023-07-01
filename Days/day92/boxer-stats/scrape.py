@@ -5,7 +5,7 @@ import pandas as pd
 
 
 boxers = ['Tyson Fury', 'Dmitry Bivol',
-           'Terence Crawford',
+           'Saul Alvarez', 'Terence Crawford',
            'Gervonta Davis']
 
 boxer_stats = []
@@ -17,9 +17,10 @@ for boxer in boxers:
     boxrec_page = response.text
 
     soup = BeautifulSoup(boxrec_page, "html.parser")
+    # get_stats(soup)
     stats = get_stats(soup)
-    
     boxer_stats.append(stats)
+    
 
 df = pd.DataFrame(boxer_stats)
 df.to_csv('boxer_stats.csv')
