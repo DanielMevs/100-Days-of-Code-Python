@@ -136,7 +136,8 @@ def get_stats(soup: btfl_sp) -> dict:
     }
 
     
-    stat_scrape = soup.find_all(name="div", class_="stats-row__content text-left ml-3 headings-text-color")
+    stat_scrape = soup.find_all(name="div", class_="stats-row__content " + 
+                                "text-left ml-3 headings-text-color")
     
     
 
