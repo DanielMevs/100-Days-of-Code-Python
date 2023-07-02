@@ -1,24 +1,30 @@
-from urllib.request import urlopen
-import certifi
-import json
-import os
+from flask import Flask
+import requests
+from config import Config
 
-key = os.environ.get("FINANCIAL_MODELING_API_KEY")
-def get_jsonparsed_data(url):
-    """
-    Receive the content of ``url``, parse it as JSON and return the object.
+app = Flask(__name__)
 
-    Parameters
-    ----------
-    url : str
 
-    Returns
-    -------
-    dict
-    """
-    response = urlopen(url, cafile=certifi.where())
-    data = response.read().decode("utf-8")
-    return json.loads(data)
+def fetch_price(ticker):
+    params={'access_key': Config.API_KEY}
+    print(Config.API_URL.format(ticker=ticker))
+    data = requests.get(Config.API_URL.format(ticker=ticker.lower()), params).json()
+    return float(data['price'])
+    
 
-url = (f"https://financialmodelingprep.com/api/v3/quote_short/apikey={key}")
-print(get_jsonparsed_data(url))
+@app.route('/stock/<ticker>')
+def stock(ticker):
+    price = fetch_price(ticker)
+    return f"The price of {ticker} is ${price: .2f}"
+
+
+@app.route('/')
+def home_page():
+    return 'Try /stock/APPL'
+
+
+if __name__ == "__main__":
+    
+    with app.app_context():
+        app.run(debug=True)
+
