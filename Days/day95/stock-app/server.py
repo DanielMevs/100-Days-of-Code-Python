@@ -4,7 +4,6 @@ import json
 import os
 
 key = os.environ.get("FINANCIAL_MODELING_API_KEY")
-print(f'key: {key}')
 def get_jsonparsed_data(url):
     """
     Receive the content of ``url``, parse it as JSON and return the object.
