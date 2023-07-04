@@ -18,10 +18,10 @@ df_data = pd.read_csv('mission_launches.csv')
 L> (4324, 9)
 
 * How many rows and columns does it have?
-L> 9 columns and 4324 rows
+L> 9 columns and 4324 rows (2 columns are junk)
 
 * What are the column names?
-L>Unnamed: 0.1, Unnamed: 0, Organisation, Location, 
+L> Organisation, Location, 
 Date, Detail, Rocket_Status, Price, Mission_Status
 
 * Are there any NaN values or duplicates?
@@ -54,3 +54,37 @@ Create a chart that shows the number of space mission launches by organisation.
 
 # print(df_data[['Organisation']].groupby('Organisation').count())
 print(df_data['Organisation'].count())
+
+# df_data['Organisation'].value_counts(sort=True).plot.bar()
+
+# plt.show()
+# print(df_data['Rocket_Status'].value_counts())
+retired_rockets = df_data['Rocket_Status'].value_counts()['StatusRetired']
+active_rockets = df_data['Rocket_Status'].value_counts()['StatusActive']
+print(f'There are {retired_rockets} retired_rockets' +
+      f' and {active_rockets} active rockets.')
+
+
+'''How many missions were successful?
+How many missions failed?'''
+df_data['Mission_Status'].value_counts().plot.pie(autopct='%1.1f%%')
+
+# plt.show()
+
+
+'''
+How Expensive are the Launches? 
+Create a histogram and visualise the distribution. The price column is given
+ in USD millions (careful of missing values)
+'''
+
+df_data.dropna(inplace=True)
+print(df_data['Price'].isna().values.any())
+
+
+df_data['Price'].plot.hist()
+
+plt.show()
+# * What are the column names?
+# L> Organisation, Location, 
+# Date, Detail, Rocket_Status, Price, Mission_Status
