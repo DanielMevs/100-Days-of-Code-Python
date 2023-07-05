@@ -67,7 +67,7 @@ print(f'There are {retired_rockets} retired_rockets' +
 
 '''How many missions were successful?
 How many missions failed?'''
-df_data['Mission_Status'].value_counts().plot.pie(autopct='%1.1f%%')
+# df_data['Mission_Status'].value_counts().plot.pie(autopct='%1.1f%%')
 
 # plt.show()
 
@@ -82,9 +82,39 @@ df_data.dropna(inplace=True)
 print(df_data['Price'].isna().values.any())
 
 
-df_data['Price'].plot.hist()
+print(df_data.Price.describe())
 
-plt.show()
-# * What are the column names?
-# L> Organisation, Location, 
-# Date, Detail, Rocket_Status, Price, Mission_Status
+# Generate data on commute times.
+f = lambda x: "%.2f" % x
+df_data['Price'] = df_data['Price'].apply(lambda x: f(float(x.replace(',', ''))))
+
+
+# sns.set_style('darkgrid')
+# sns.distplot(df_data.Price)
+# plt.show()
+
+# alternatively
+
+# df_data.Price.hist(grid=True, bins=56, rwidth=0.9,
+#                    color='#607c8e')
+# plt.title('Distribution of Price of each Space Launch')
+# plt.xticks(rotation=90)
+# plt.xlabel('Price in USD millions', fontweight='bold')
+# plt.ylabel('Counts', fontweight='bold')
+# plt.grid(axis='y', alpha=0.75)
+
+
+# plt.subplots_adjust(bottom=0.200)
+
+# N = 150
+# plt.gca().margins(x=0)
+# plt.gcf().canvas.draw()
+# tl = plt.gca().get_xticklabels()
+# maxsize = max([t.get_window_extent().width for t in tl])
+# m = 0.2 # inch margin
+# s = maxsize/plt.gcf().dpi*N+2*m
+# margin = m/plt.gcf().get_size_inches()[0]
+
+# plt.gcf().subplots_adjust(left=margin, right=1.-margin)
+# plt.gcf().set_size_inches(s, plt.gcf().get_size_inches()[1])
+# plt.show()
