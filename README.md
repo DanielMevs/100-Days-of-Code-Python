@@ -6,17 +6,17 @@ From AppBrewery founder Angela Yu, [this course](https://www.udemy.com/course/10
 ## 🔰 Beginner ##
 * [Day 1](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day1): Working with Variables in Python to Manage Data
 * [Day 2](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/Day2): Understanding Data Types and How to Manipulate Strings
-* [Day 3]((https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/Day3)): Control Flow and Logical Operators
-* [Day 4]((https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/Day4)): Randomisation and Python Lists
-* [Day 5]((https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/Day5)): Python Loops
-* [Day 6]((https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/Day6)): Python Functions & Karel
-* [Day 7]((https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/Day7)): Hangman
-* [Day 8]((https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/Day8)): Function Parameters & Caesar Cipher
-* [Day 9]((https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day9)): Dictionaries, Nesting and the Secret Auction
-* [Day 10]((https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day10)): Functions with Outputs
-* [Day 11]((https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day11)): The Blackjack Capstone Project
-* [Day 12]((https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day12)): Scope & Number Guessing Game
-* [Day 13]((https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day13)): Debugging: How to Find and Fix Errors in your Code
-* [Day 14]((https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day14)): Higher Lower Game Project
+* [Day 3](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/Day3): Control Flow and Logical Operators
+* [Day 4](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/Day4): Randomisation and Python Lists
+* [Day 5](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/Day5): Python Loops
+* [Day 6](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/Day6): Python Functions & Karel
+* [Day 7](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/Day7): Hangman
+* [Day 8](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/Day8): Function Parameters & Caesar Cipher
+* [Day 9](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day9): Dictionaries, Nesting and the Secret Auction
+* [Day 10](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day10): Functions with Outputs
+* [Day 11](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day11): The Blackjack Capstone Project
+* [Day 12](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day12): Scope & Number Guessing Game
+* [Day 13](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day13): Debugging: How to Find and Fix Errors in your Code
+* [Day 14](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day14): Higher Lower Game Project
 
 
