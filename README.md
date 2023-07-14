@@ -18,5 +18,22 @@ From AppBrewery founder Angela Yu, [this course](https://www.udemy.com/course/10
 * [Day 12](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day12): Scope & Number Guessing Game
 * [Day 13](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day13): Debugging: How to Find and Fix Errors in your Code
 * [Day 14](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day14): Higher Lower Game Project
-
-
+  
+## 📚 Intermediate
+* [Day 15](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day15): Local Development Environment Setup & the Coffee Machine
+* [Day 16](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day16): Object Oriented Programming (OOP)
+* [Day 17](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day17): The Quiz Project & The Benefits of OOP
+* [Day 18](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day18): Turtle & the Graphical User Interface (GUI)
+* [Day 19](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day19): Instances, State and Higher Order Functions
+* [Day 20](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day20): Build the Snake Game Part 1: Animation & Coordinates
+* [Day 21](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day21): Build the Snake Game Part 2: Inheritance & List Slicing
+* [Day 22](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day22): Build Pong: The Famous Arcade Game
+* [Day 23](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day23): The Turtle Crossing Capstone Project
+* [Day 24](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day24): Files, Directories and Paths
+* [Day 25](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day25): Working with CSV Data and the Pandas Library
+* [Day 26](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day26): List Comprehension and the Nato Alphabet
+* [Day 27](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day27): Tkinter, *args, **kwargs and Creating GUI Programs
+* [Day 28](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day28): Tkinter, Dynamic Typing and the Pomodoro GUI Application
+* [Day 29](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day29): Building a Password Manager GUI App with Tkinter
+* [Day 30](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day30): Errors, Exceptions and JSON Data: Improving the Password Manager
+  
