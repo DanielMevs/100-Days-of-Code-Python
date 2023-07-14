@@ -1,6 +1,7 @@
 ### 100 Days of Code: The Complete Python Pro Bootcamp ###
 ![](https://media.giphy.com/media/coxQHKASG60HrHtvkt/giphy.gif)
 
+
 From AppBrewery founder Angela Yu, [this course](https://www.udemy.com/course/100-days-of-code/) boasts one of the highest ratings on Udemy. Completing this course gave me an opportunity to apply my Python knowledge that I've accumulated over time. In the process of building professional, thought-provoking applications, I deepened my understanding of beginner, intermediate and advanced topics which greatly helped advance my journey to mastery. I now have a much firmer grasp on GUI development, Web development, automation, and data science. Very beginner-friendly and engaging, Angela makes her lessons fun, providing the right amount of challenge. I highly recommend this course for anyone looking to develop their Python skills.
 
 ## 🔰 Beginner ##
@@ -36,4 +37,35 @@ From AppBrewery founder Angela Yu, [this course](https://www.udemy.com/course/10
 * [Day 28](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day28): Tkinter, Dynamic Typing and the Pomodoro GUI Application
 * [Day 29](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day29): Building a Password Manager GUI App with Tkinter
 * [Day 30](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day30): Errors, Exceptions and JSON Data: Improving the Password Manager
+* [Day 31](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day31): Flash Card App Capestone Project
+  
+## 👨‍💻 Intermediate+
+* [Day 32](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day32): Send Email (smtplib) & Manage Dates (datetime) - Automated Birthday Wisher
+* [Day 33](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day33): API Endpoints & API Parameters - ISS Overhead Notifier
+* [Day 34](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day34): API Practice - Creating a GUI Quiz App
+* [Day 35](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day35): Keys, Authentication & Environment Variables - Telegram Rain Notifier
+* [Day 36](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day36): Stock Trading News Alert Project
+* [Day 37](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day37): Habit Tracking Project: API Post Requests & Headers
+* [Day 38](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day38): Workout Tracking Using Google Sheets
+* [Day 39](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day39): Capstone Part 1: Flight Deal Finder
+* [Day 40](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day40): Capstone Part 2: Flight Club
+* [Day 41](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day41): Introduction to HTML
+* [Day 42](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day42): Intermediate HTML
+* [Day 43](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day43): Introduction to CSS
+* [Day 44](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day44): Intermediate CSS
+* [Day 45](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day45): Web Scraping with Beautiful Soup
+* [Day 46](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day46): Create a Spotify Playlist Using The Musical Time Machine
+* [Day 47](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day47): Create an Automated Amazon Price Tracker
+* [Day 48](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day48): Selenium Webdriver Browser and Game Playing Bot
+* [Day 49](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day49): Automating Job Applications on LinkedIn
+* [Day 50](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day50): Auto Tinder Swiping Bot
+* [Day 51](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day51): Internet Speed Twitter Complaint Bot
+* [Day 52](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day52): Instagram Follower Bot
+* [Day 53](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day53): Web Scraping Capstone - Data Entry Job Automation
+* [Day 54](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day54): Introduction to Web Development with Flask
+* [Day 55](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day55): HTML & URL Parsing in Flask and the Higher Lower Game
+* [Day 56](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day56): Rendering HTML/Static Files and Using Website Templates
+* [Day 57](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day57): Templating with Jinja in Flask Applications
+* [Day 58](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day58): Web Foundation Boostrap
+  
   
