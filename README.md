@@ -91,3 +91,25 @@ From AppBrewery founder Angela Yu, [this course](https://www.udemy.com/course/10
 * [Day 78](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day78): Analysing the Nobel Prize with Plotly, Matplotlib & Seaborn
 * [Day 79](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day79): The Tragic Discovery of Handwashing: t-Tests & Distributions
 * [Day 80](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day80): Capstone Project - Predict House Prices
+
+## ⚔ Professional Portfolio Projects
+* [Day 81](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day81): Text to Morse Code Converter
+* [Day 82](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day82): Portfolio Website
+* [Day 83](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day83): Tic Tac Toe
+* [Day 84](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day84): Image Watermarking Desktop App
+* [Day 85](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day85): Typing Speed Test App
+* [Day 86](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day86): Breakout: The Famous Arcade Game
+* [Day 87](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day87): Cafe and Wifi Website
+* [Day 88](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day88): To Do Agenda App
+* [Day 89](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day89): Disappearing Text Writing App
+* [Day 90](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day90): Convert PDF to Audiobook
+* [Day 91](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day91): Image to Color List
+* [Day 92](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day92): Amazon Canada Web Scraper
+* [Day 93](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day93): Google Dinosaur Game Bot
+* [Day 94](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day94): Space Invaders
+* [Day 95](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day95): Custom API
+* [Day 96](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day96): An Online Shop
+* [Day 97](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day97): Percentage Calculator
+* [Day 98](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day98): Analyzing and Visualizing the Space Race
+* [Day 99](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day99): Analyzing Deaths Involving Police in the United States
+* [Day 100](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day100): Predicting Earnings using Multivariable Regression
