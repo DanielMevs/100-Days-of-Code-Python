@@ -104,7 +104,7 @@ From AppBrewery founder Angela Yu, [this course](https://www.udemy.com/course/10
 * [Day 89](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day89): Disappearing Text Writing App
 * [Day 90](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day90): Convert PDF to Audiobook
 * [Day 91](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day91): Image to Color List
-* [Day 92](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day92): Amazon Canada Web Scraper
+* [Day 92](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day92): Boxer Stats Web Scraper
 * [Day 93](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day93): Google Dinosaur Game Bot
 * [Day 94](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day94): Space Invaders
 * [Day 95](https://github.com/DanielMevs/100-Days-of-Code-Python/tree/main/Days/day95): Custom API
