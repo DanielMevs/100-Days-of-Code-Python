@@ -50,6 +50,7 @@ Consider removing columns containing junk data.
 # df_data.dropna(inplace=True)
 # print(df_data.head())
 df_data.drop(['Unnamed: 0.1', 'Unnamed: 0'], axis=1, inplace=True)
+df_data.drop_duplicates(inplace=True)
 
 ################################################################
 
